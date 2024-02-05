@@ -7,7 +7,7 @@ from aiogram.dispatcher.filters import Command, ContentTypeFilter, Text
 import logging
 import keyboard as kb
 
-with open(r"D:\PythonProjects\BotFilm\token_file.json") as file:
+with open(r"путь к файлу token_file.json на вашем пк, например: D:\Projects\Film\token_file.json") as file:
     data = json.load(file)
 
 BOT_TOKEN = data['BOT_TOKEN']
