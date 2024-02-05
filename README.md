@@ -3,7 +3,9 @@
 
 
 token_file.json - необходимо указать токен API (взять можно   <a href="https://t.me/kinopoiskdev_bot">тут</a> ) и поместить Токен телеграм-бота.
+
 keyboard.py - реализация кнопок для бота
+
 Clear_Resp.py - главный файл бота
 
 
