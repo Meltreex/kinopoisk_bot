@@ -5,7 +5,7 @@
     keyboard.py - реализация кнопок для бота
     Clear_Resp.py - главный файл бота
     [тут](https://t.me/kinopoiskdev_bot)    
-
+    <a href="https://t.me/kinopoiskdev_bot">тут</a>
 Команды бота:
 
     /start - Запуск бота
