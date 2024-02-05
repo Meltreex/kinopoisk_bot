@@ -29,7 +29,7 @@ async def start_func(msg: types.Message):
                            reply_markup=kb.main_bar())
 
 @dp.message_handler(Text(equals='Назад⬅️'))
-async def start_func(msg: types.Message):
+async def back_func(msg: types.Message):
     await bot.send_message(msg.from_user.id, f'Назад',
                            reply_markup=kb.main_bar())
 
@@ -38,7 +38,7 @@ async def choose_genre(msg: types.Message):
     await bot.send_message(msg.from_user.id, 'Выбери интересующий жанр!', reply_markup=kb.genres())
 
 @dp.message_handler(Text(equals='Произвольное кино🎥'))
-async def get_random(msg: types.Message):
+async def get_random_movie(msg: types.Message):
 
     r = requests.get(url + 'v1.4/movie/random', headers=headers)
     if r.status_code == 200:
@@ -54,7 +54,7 @@ async def get_random(msg: types.Message):
 
 
 @dp.message_handler(Text(equals='Сериал🎞'))
-async def choose_genre_drama(msg: types.Message):
+async def get_random_tvseries(msg: types.Message):
     response = requests.get(
         url='https://api.kinopoisk.dev/v1.4/movie/random',
         params={
@@ -84,7 +84,7 @@ async def choose_genre_drama(msg: types.Message):
     await bot.send_photo(msg.from_user.id, photo=movies['poster']['url'], caption=movies["description"])
 
 @dp.message_handler(Text(equals='Ужасы☠️'))
-async def choose_genre_drama(msg: types.Message):
+async def choose_genre_horrors(msg: types.Message):
     response = requests.get(
         url='https://api.kinopoisk.dev/v1.4/movie/random',
         params={
@@ -100,7 +100,7 @@ async def choose_genre_drama(msg: types.Message):
 
 
 @dp.message_handler(Text(equals='Триллер🫣'))
-async def choose_genre_drama(msg: types.Message):
+async def choose_genre_thriller(msg: types.Message):
     response = requests.get(
         url='https://api.kinopoisk.dev/v1.4/movie/random',
         params={
@@ -115,7 +115,7 @@ async def choose_genre_drama(msg: types.Message):
     await bot.send_photo(msg.from_user.id, photo=movies['poster']['url'], caption=movies["description"])
 
 @dp.message_handler(Text(equals='Боевик🤯'))
-async def choose_genre_drama(msg: types.Message):
+async def choose_genre_action(msg: types.Message):
     response = requests.get(
         url='https://api.kinopoisk.dev/v1.4/movie/random',
         params={
@@ -130,7 +130,7 @@ async def choose_genre_drama(msg: types.Message):
     await bot.send_photo(msg.from_user.id, photo=movies['poster']['url'], caption=movies["description"])
 
 @dp.message_handler(Text(equals='Комедия🤣'))
-async def choose_genre_drama(msg: types.Message):
+async def choose_genre_comedy(msg: types.Message):
     response = requests.get(
         url='https://api.kinopoisk.dev/v1.4/movie/random',
         params={
@@ -146,7 +146,7 @@ async def choose_genre_drama(msg: types.Message):
 
 
 @dp.message_handler(Text(equals='🅰️ниме'))
-async def anime(msg: types.Message):
+async def get_random_anime(msg: types.Message):
     response = requests.get(
         url='https://api.kinopoisk.dev/v1.4/movie/random',
         params={
